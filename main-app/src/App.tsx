@@ -1,7 +1,6 @@
 import {Other} from './jsAndTs/Other';
 import {Pretty} from './mui/Pretty';
-// @ts-ignore
-import { App as Mfe1App } from 'mfe1/App';
+import { App as Mfe1App } from 'mfe1';
 
 export const App = () => (
     <div>
