@@ -2,7 +2,8 @@
   "name": "main-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "build": "vite build"
   },
   "author": "craigmiller160",
   "devDependencies": {
