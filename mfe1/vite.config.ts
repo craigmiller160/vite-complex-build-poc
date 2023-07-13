@@ -10,13 +10,7 @@ export default defineConfig({
     },
     plugins: [
         react(),
-        federation({
-            name: 'mfe1',
-            filename: 'remoteEntry.js',
-            exposes: {
-                './App': './src/App.tsx'
-            }
-        })
+
     ],
     build: {
         outDir: path.join(process.cwd(), 'build'),
