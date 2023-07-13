@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
+import packageJson from './package.json';
+console.log(packageJson.dependencies);
 
 export default defineConfig({
     root: path.join(process.cwd(), 'src'),
@@ -15,6 +17,9 @@ export default defineConfig({
             filename: 'remoteEntry.js',
             exposes: {
                 './App': './src/App.tsx'
+            },
+            shared: {
+                ...packageJson.dependencies
             }
         })
     ],
