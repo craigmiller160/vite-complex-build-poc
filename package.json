@@ -2,7 +2,9 @@
   "name": "vite-complex-build-poc",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start:main": "cd main-app && pn start",
+    "start:mfe1": "cd mfe1 && pn start"
   },
   "author": "craigmiller160",
   "devDependencies": {
