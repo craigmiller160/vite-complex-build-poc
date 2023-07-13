@@ -5,7 +5,8 @@
     "start": "vite",
     "build": "vite build",
     "visualize": "vite-bundle-visualizer",
-    "preview": "pnpm build && vite preview --port 3001"
+    "preview": "pnpm build && vite preview --port 3001",
+    "fullStart": "pnpm preview"
   },
   "author": "craigmiller160",
   "dependencies": {

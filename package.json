@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "prepare": "husky install",
-    "start": "pnpm --filter ./main-app start && pnpm --filter ./mfe1 preview",
+    "start": "pnpm --parallel start",
+    "fullStart": "pnpm --parallel fullStart",
     "build": "pnpm --parallel build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit"
   },
