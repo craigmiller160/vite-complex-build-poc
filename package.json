@@ -1,0 +1,11 @@
+{
+  "name": "vite-complex-build-poc",
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "author": "craigmiller160",
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
+}
