@@ -2,11 +2,13 @@
   "name": "main-app",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite"
   },
   "author": "craigmiller160",
   "devDependencies": {
     "@types/node": "^20.4.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.7",
     "typescript": "^5.1.6",
     "vite": "^4.4.3"
   },
