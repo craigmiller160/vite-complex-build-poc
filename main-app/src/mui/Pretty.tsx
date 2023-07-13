@@ -5,4 +5,4 @@ export const Pretty = () => (
         <Button variant="contained">My Button</Button>
         <Typography>Title</Typography>
     </div>
-)
+);
