@@ -1,6 +1,6 @@
 import {Other} from './jsAndTs/Other';
 import {Pretty} from './mui/Pretty';
-import Mfe1App from 'mfe1/App';
+import { App as Mfe1App } from 'mfe1/App';
 
 export const App = () => (
     <div>
