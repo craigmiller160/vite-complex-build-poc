@@ -1,5 +1,5 @@
 {
-  "name": "main-app",
+  "name": "mfe1",
   "version": "1.0.0",
   "scripts": {
     "start": "vite",
@@ -7,19 +7,18 @@
     "visualize": "vite-bundle-visualizer"
   },
   "author": "craigmiller160",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.0"
+  },
   "devDependencies": {
-    "@types/node": "^20.4.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.7",
     "typescript": "^5.1.6",
     "vite": "^4.4.3",
     "vite-bundle-visualizer": "^0.8.0",
     "@vitejs/plugin-react-swc": "^3.3.2"
-  },
-  "dependencies": {
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }
