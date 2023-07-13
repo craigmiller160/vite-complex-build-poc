@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "visualize": "vite-bundle-visualizer"
   },
   "author": "craigmiller160",
   "devDependencies": {
@@ -11,7 +12,8 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.7",
     "typescript": "^5.1.6",
-    "vite": "^4.4.3"
+    "vite": "^4.4.3",
+    "vite-bundle-visualizer": "^0.8.0"
   },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
