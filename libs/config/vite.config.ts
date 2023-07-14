@@ -54,3 +54,14 @@ export const configureVite = (config: ViteConfig): UserConfigExport => {
         }
     })
 };
+
+/*
+
+minify: false,
+		cssMinify: false,
+		sourcemap: false,
+		cssCodeSplit: false,
+		rollupOptions: {
+			treeshake: false
+		}
+ */
