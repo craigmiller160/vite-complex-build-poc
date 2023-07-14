@@ -5,6 +5,9 @@ import federation from '@originjs/vite-plugin-federation';
 import packageJson from './package.json';
 import topLevelAwait from 'vite-plugin-top-level-await';
 
+type NodeEnv = 'development' | 'test' | 'production';
+const nodeEnv: NodeEnv = process.env.NODE_ENV as NodeEnv;
+
 export default defineConfig({
     root: path.join(process.cwd(), 'src'),
     server: {
@@ -26,6 +29,8 @@ export default defineConfig({
     ],
     build: {
         outDir: path.join(process.cwd(), 'build'),
-        emptyOutDir: true
+        emptyOutDir: true,
+        minify: nodeEnv === 'production' ? 'terser' : false,
+        cssMinify: nodeEnv === 'production' ? undefined : false
     }
 })
