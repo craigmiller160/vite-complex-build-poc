@@ -3,6 +3,7 @@ import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
 import packageJson from './package.json';
+import topLevelAwait from 'vite-plugin-top-level-await';
 
 export default defineConfig({
     root: path.join(process.cwd(), 'src'),
@@ -11,6 +12,7 @@ export default defineConfig({
     },
     plugins: [
         react(),
+        topLevelAwait(),
         federation({
             name: 'mfe1',
             filename: 'remoteEntry.js',
