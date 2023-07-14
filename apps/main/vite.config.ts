@@ -1,5 +1,5 @@
-import { configureVite } from 'config/vite.app.config';
+import { configureViteApplication } from 'config';
 
-configureVite({
+configureViteApplication({
     port: 3000
 });
