@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "files": [
     "./tsconfig.json",
-    "vite.config.ts"
+    "vite.app.config.ts"
   ],
   "author": "craigmiller160",
   "dependencies": {

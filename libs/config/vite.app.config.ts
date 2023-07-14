@@ -9,7 +9,7 @@ type PackageJson = Readonly<{
     name: string;
 }>;
 type NodeEnv = 'development' | 'test' | 'production';
-export type ViteConfig = Readonly<{
+export type ViteAppConfig = Readonly<{
     port: number;
     federation?: Readonly<{
         exposes?: Exposes;
@@ -18,7 +18,7 @@ export type ViteConfig = Readonly<{
     }>;
 }>;
 
-const configureFederation = (config?: ViteConfig['federation']): Plugin | undefined => {
+const configureFederation = (config?: ViteAppConfig['federation']): Plugin | undefined => {
     if (!config) {
         return undefined;
     }
@@ -34,7 +34,7 @@ const configureFederation = (config?: ViteConfig['federation']): Plugin | undefi
     });
 }
 
-export const configureVite = (config: ViteConfig): UserConfigExport => {
+export const configureVite = (config: ViteAppConfig): UserConfigExport => {
     const nodeEnv: NodeEnv = process.env.NODE_ENV as NodeEnv;
     return defineConfig({
         root: path.join(process.cwd(), 'src'),
