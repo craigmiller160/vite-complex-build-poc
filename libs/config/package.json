@@ -4,6 +4,7 @@
   "type": "module",
   "main": "./build/config.umd.cjs",
   "module": "./build/config.js",
+  "types": "./build/index.d.ts",
   "exports": {
     ".": {
       "import": "./build/config.js",

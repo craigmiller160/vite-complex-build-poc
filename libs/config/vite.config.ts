@@ -9,7 +9,8 @@ const dependencies = Object.entries(packageJson.dependencies)
 export default defineConfig({
     plugins: [
         dts({
-            entryRoot: path.join(process.cwd(), 'src')
+            entryRoot: path.join(process.cwd(), 'src'),
+            insertTypesEntry: true
         })
     ],
     build: {
