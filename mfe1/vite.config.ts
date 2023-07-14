@@ -3,7 +3,7 @@ import path from 'path';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
 import packageJson from './package.json';
-console.log(packageJson.dependencies);
+import legacy from '@vitejs/plugin-legacy'
 
 export default defineConfig({
     root: path.join(process.cwd(), 'src'),
@@ -12,6 +12,9 @@ export default defineConfig({
     },
     plugins: [
         react(),
+        legacy({
+            targets: '>0.25%, ie >= 11'
+        }),
         federation({
             name: 'mfe1',
             filename: 'remoteEntry.js',
