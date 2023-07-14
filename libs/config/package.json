@@ -2,6 +2,9 @@
   "name": "config",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
   "files": [
     "./tsconfig.json",
     "vite.app.config.ts"

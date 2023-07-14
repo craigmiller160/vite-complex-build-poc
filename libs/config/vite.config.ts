@@ -7,6 +7,8 @@ const dependencies = Object.entries(packageJson.dependencies)
 
 export default defineConfig({
     build: {
+        outDir: path.join(process.cwd(), 'lib'),
+        emptyOutDir: true,
         lib: {
             entry: path.join(process.cwd(), 'src'),
             name: 'config',
