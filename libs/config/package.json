@@ -2,6 +2,14 @@
   "name": "config",
   "version": "1.0.0",
   "type": "module",
+  "main": "./build/config.umd.cjs",
+  "module": "./build/config.js",
+  "exports": {
+    ".": {
+      "import": "./build/config.js",
+      "require": "./build/config.umd.cjs"
+    }
+  },
   "scripts": {
     "build": "vite build"
   },
@@ -19,6 +27,7 @@
     "typescript": "^5.1.6",
     "vite": "^4.4.3",
     "vite-bundle-visualizer": "^0.8.0",
+    "vite-plugin-dts": "^3.3.0",
     "vite-plugin-top-level-await": "^1.3.1"
   },
   "devDependencies": {

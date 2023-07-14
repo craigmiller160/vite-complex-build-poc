@@ -1,0 +1,3 @@
+export {
+    configureViteApplication
+} from './vite'
