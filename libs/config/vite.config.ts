@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import packageJson from './package.json';
 import dts from 'vite-plugin-dts';
+import { builtinModules } from 'module';
 
 const dependencies = Object.entries(packageJson.dependencies)
     .map(([key]) => key);
@@ -22,7 +23,10 @@ export default defineConfig({
             fileName: 'config'
         },
         rollupOptions: {
-            external: dependencies
+            external: [
+                ...dependencies,
+                ...builtinModules
+            ]
         }
     }
 });
