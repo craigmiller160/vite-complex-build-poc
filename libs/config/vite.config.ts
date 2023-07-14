@@ -50,18 +50,11 @@ export const configureVite = (config: ViteConfig): UserConfigExport => {
             outDir: path.join(process.cwd(), 'build'),
             emptyOutDir: true,
             minify: nodeEnv === 'production' ? 'terser' : false,
-            cssMinify: nodeEnv === 'production' ? undefined : false
+            cssMinify: nodeEnv === 'production' ? undefined : false,
+            cssCodeSplit: nodeEnv === 'production',
+            rollupOptions: {
+                treeshake: nodeEnv === 'production' ? 'recommended' : false
+            }
         }
     })
 };
-
-/*
-
-minify: false,
-		cssMinify: false,
-		sourcemap: false,
-		cssCodeSplit: false,
-		rollupOptions: {
-			treeshake: false
-		}
- */
