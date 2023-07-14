@@ -6,6 +6,9 @@
     "vite.app.config.ts"
   ],
   "author": "craigmiller160",
+  "peerDependencies": {
+    "vite": "^4.4.3"
+  },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.3",
     "@vitejs/plugin-react-swc": "^3.3.2",
