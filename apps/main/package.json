@@ -12,7 +12,8 @@
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.7",
-    "config": "workspace:*"
+    "config": "workspace:*",
+    "vite": "^4.4.3"
   },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
