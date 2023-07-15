@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "prepare": "husky install",
-    "start": "pnpm --parallel start",
-    "buildApps": "pnpm --parallel --filter \"./apps/*\" run build",
+    "apps:start": "pnpm --parallel --filter './apps/*' start",
+    "apps:build": "pnpm --parallel --filter './apps/*' run build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit"
   },
   "author": "craigmiller160",
