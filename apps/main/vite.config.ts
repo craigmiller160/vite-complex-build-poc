@@ -1,5 +1,10 @@
 import { configureViteApplication } from 'config';
 
 export default configureViteApplication({
-    port: 3000
+    port: 3000,
+    federation: {
+        remotes: {
+            'mfe1': 'http://localhost:3001'
+        }
+    }
 });
