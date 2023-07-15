@@ -18,8 +18,7 @@
     "build": "vite build"
   },
   "files": [
-    "./tsconfig.json",
-    "vite.app.config.ts"
+    "./build"
   ],
   "author": "craigmiller160",
   "peerDependencies": {
