@@ -5,8 +5,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "visualize": "vite-bundle-visualizer",
-    "fullStart": "pnpm start"
+    "visualize": "vite-bundle-visualizer"
   },
   "author": "craigmiller160",
   "devDependencies": {

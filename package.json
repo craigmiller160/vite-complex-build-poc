@@ -4,7 +4,6 @@
   "scripts": {
     "prepare": "husky install",
     "start": "pnpm --parallel start",
-    "fullStart": "pnpm --parallel fullStart",
     "build": "pnpm --parallel build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit"
   },
