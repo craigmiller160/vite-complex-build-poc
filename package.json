@@ -5,6 +5,7 @@
     "prepare": "husky install",
     "apps:start": "pnpm --parallel --filter './apps/*' start",
     "apps:build": "pnpm --parallel --filter './apps/*' run build",
+    "libs:build": "pnpm --parallel --filter './libs/*' run build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit"
   },
   "author": "craigmiller160",

@@ -3,22 +3,34 @@ import path from 'path';
 import packageJson from './package.json';
 import dts from 'vite-plugin-dts';
 import { builtinModules } from 'module';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const dependencies = Object.entries(packageJson.dependencies)
     .map(([key]) => key);
 
+const rootDir = path.join(process.cwd(), 'src');
+const buildDir = path.join(process.cwd(), 'build');
+
 export default defineConfig({
     plugins: [
         dts({
-            entryRoot: path.join(process.cwd(), 'src'),
+            entryRoot: rootDir,
             insertTypesEntry: true
+        }),
+        viteStaticCopy({
+            targets: [
+                {
+                    src: path.join(process.cwd(), 'tsconfig.json'),
+                    dest: buildDir
+                }
+            ]
         })
     ],
     build: {
-        outDir: path.join(process.cwd(), 'build'),
+        outDir: buildDir,
         emptyOutDir: true,
         lib: {
-            entry: path.join(process.cwd(), 'src'),
+            entry: rootDir,
             name: 'config',
             fileName: 'config'
         },
