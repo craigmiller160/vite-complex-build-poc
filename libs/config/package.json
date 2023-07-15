@@ -1,6 +1,9 @@
 {
   "name": "config",
   "version": "1.0.0",
+  "bin": {
+    "my-start": "vite"
+  },
   "type": "module",
   "main": "./build/config.umd.cjs",
   "module": "./build/config.js",
