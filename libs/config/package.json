@@ -15,7 +15,7 @@
     "build": "vite build"
   },
   "files": [
-    "./build"
+    "build"
   ],
   "author": "craigmiller160",
   "peerDependencies": {
