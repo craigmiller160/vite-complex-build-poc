@@ -24,10 +24,6 @@ export default defineConfig({
                 {
                     src: path.join(process.cwd(), 'tsconfig.base.json'),
                     dest: buildDir
-                },
-                {
-                    src: path.join(process.cwd(), 'files'),
-                    dest: buildDir
                 }
             ]
         })

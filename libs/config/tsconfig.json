@@ -2,12 +2,10 @@
   "extends": "./tsconfig.base.json",
   "include": [
     "src/**/*",
-    "test/**/*",
     "./vite.config.ts"
   ],
   "exclude": [
     "node_modules",
-    "lib",
     "build",
     ".yalc"
   ]
