@@ -6,7 +6,7 @@
     "start": "vite",
     "serve": "mkdir -p build && pnpm run \"/^(preview|build)$/\"",
     "preview": "vite preview --port 3000",
-    "build": "vite build",
+    "build": "NODE_ENV=production vite build",
     "visualize": "vite-bundle-visualizer"
   },
   "author": "craigmiller160",
