@@ -1,0 +1,12 @@
+{
+  "extends": "./node_modules/config/build/tsconfig.base.json",
+  "include": [
+    "src/**/*",
+    "./vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    ".yalc"
+  ]
+}
