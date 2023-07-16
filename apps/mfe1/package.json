@@ -1,6 +1,7 @@
 {
   "name": "mfe1",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "mkdir -p build && pnpm run \"/^(preview|buildWatch)$/\"",
     "build": "vite build",
