@@ -4,7 +4,6 @@ import packageJson from './package.json';
 import dts from 'vite-plugin-dts';
 import { builtinModules } from 'module';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-import topLevelAwait from 'vite-plugin-top-level-await';
 
 const dependencies = Object.keys(packageJson.dependencies);
 
@@ -17,7 +16,6 @@ export default defineConfig({
 			entryRoot: rootDir,
 			insertTypesEntry: true
 		}),
-		topLevelAwait(),
 		viteStaticCopy({
 			targets: [
 				{
