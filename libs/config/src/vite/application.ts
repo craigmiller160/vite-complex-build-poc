@@ -22,6 +22,10 @@ export type ViteAppConfig = Readonly<{
 	}>;
 }>;
 
+const srcDir = path.join(process.cwd(), 'src');
+const buildDir = path.join(process.cwd(), 'build');
+const packageJsonFile = path.join(process.cwd(), 'package.json');
+
 const configureFederation = (
 	config?: ViteAppConfig['federation']
 ): Plugin | undefined => {
@@ -30,7 +34,7 @@ const configureFederation = (
 	}
 
 	const packageJson: PackageJson = JSON.parse(
-		fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8')
+		fs.readFileSync(packageJsonFile, 'utf8')
 	);
 
 	return federation({
@@ -45,7 +49,7 @@ const configureFederation = (
 export const configureVite = (config: ViteAppConfig): UserConfigExport => {
 	const nodeEnv: NodeEnv = process.env.NODE_ENV as NodeEnv;
 	return defineConfig({
-		root: path.join(process.cwd(), 'src'),
+		root: srcDir,
 		server: {
 			port: config.port
 		},
@@ -55,7 +59,7 @@ export const configureVite = (config: ViteAppConfig): UserConfigExport => {
 			configureFederation(config.federation)
 		],
 		build: {
-			outDir: path.join(process.cwd(), 'build'),
+			outDir: buildDir,
 			emptyOutDir: true,
 			minify: nodeEnv === 'production' ? 'terser' : false,
 			cssMinify: nodeEnv === 'production' ? undefined : false,
