@@ -1,0 +1,23 @@
+{
+  "name": "react-lazy",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./build/react-lazy.umd.cjs",
+  "module": "./build/react-lazy.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/config.js",
+      "require": "./build/config.umd.cjs"
+    }
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "author": "craigmiller160",
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "vite": "^4.4.3",
+    "config": "workspace:*"
+  }
+}

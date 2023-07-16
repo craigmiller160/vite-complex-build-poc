@@ -22,6 +22,7 @@ export const configureVite = (config: ViteLibraryConfig): UserConfigExport =>
 		],
 		build: {
 			outDir: buildDir,
+			emptyOutDir: true,
 			lib: {
 				entry: rootDir,
 				name: config.name,
