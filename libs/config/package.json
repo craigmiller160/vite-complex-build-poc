@@ -19,7 +19,8 @@
   ],
   "author": "craigmiller160",
   "peerDependencies": {
-    "vite": "^4.4.3"
+    "vite": "^4.4.3",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.3",
