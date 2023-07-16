@@ -1,4 +1,3 @@
-import packageJson from './package.json';
 import { configureViteApplication } from 'config';
 
 export default configureViteApplication({
