@@ -39,6 +39,9 @@ importers:
       config:
         specifier: workspace:*
         version: link:../../libs/config
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
       vite:
         specifier: ^4.4.3
         version: 4.4.3(@types/node@20.4.2)
