@@ -22,7 +22,11 @@ export default defineConfig({
         viteStaticCopy({
             targets: [
                 {
-                    src: path.join(process.cwd(), 'tsconfig.json'),
+                    src: path.join(process.cwd(), 'tsconfig.base.json'),
+                    dest: buildDir
+                },
+                {
+                    src: path.join(process.cwd(), 'files'),
                     dest: buildDir
                 }
             ]
