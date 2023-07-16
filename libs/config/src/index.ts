@@ -1,3 +1,1 @@
-export {
-    configureViteApplication
-} from './vite'
+export { configureViteApplication } from './vite';

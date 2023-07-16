@@ -6,10 +6,16 @@
     "apps:start": "pnpm --parallel --filter './apps/*' start",
     "apps:build": "pnpm --parallel --filter './apps/*' run build",
     "libs:build": "pnpm --parallel --filter './libs/*' run build",
-    "typeCheck": "pnpm --parallel exec tsc --noEmit"
+    "typeCheck": "pnpm --parallel exec tsc --noEmit",
+    "lint": "eslint --fix --max-warnings=0 '{apps,libs}/*/src/**/*.{ts,tsx,js,tsx}'"
   },
   "author": "craigmiller160",
   "devDependencies": {
+    "@craigmiller160/eslint-config-js": "^1.2.1",
+    "@craigmiller160/eslint-config-prettier": "^1.0.2",
+    "@craigmiller160/eslint-config-react": "^1.0.3",
+    "@craigmiller160/eslint-config-ts": "^1.1.2",
+    "@craigmiller160/prettier-config": "^1.0.2",
     "husky": "^8.0.3"
   }
 }
