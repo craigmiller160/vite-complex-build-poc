@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "vite",
+    "serve": "mkdir -p build && pnpm run \"/^(preview|build)$/\"",
+    "preview": "vite preview --port 3000",
     "build": "vite build",
     "visualize": "vite-bundle-visualizer"
   },
