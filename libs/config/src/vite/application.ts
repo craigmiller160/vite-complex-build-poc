@@ -3,15 +3,11 @@ import path from 'path';
 import fs from 'fs';
 import react from '@vitejs/plugin-react-swc';
 import topLevelAwait from 'vite-plugin-top-level-await';
-import federation, {
-	Exposes,
-	Shared,
-	Remotes
-} from '@originjs/vite-plugin-federation';
+import federation, { Exposes, Remotes } from '@originjs/vite-plugin-federation';
 
 type PackageJson = Readonly<{
 	name: string;
-	dependencies: Record<string,string>;
+	dependencies: Record<string, string>;
 }>;
 type NodeEnv = 'development' | 'test' | 'production';
 export type ViteAppConfig = Readonly<{
@@ -20,6 +16,10 @@ export type ViteAppConfig = Readonly<{
 		exposes?: Exposes;
 		remotes?: Remotes;
 	}>;
+}>;
+type SharedConfig = Readonly<{
+	version: string;
+	requiredVersion: string;
 }>;
 
 const srcDir = path.join(process.cwd(), 'src');
@@ -37,12 +37,25 @@ const configureFederation = (
 		fs.readFileSync(packageJsonFile, 'utf8')
 	);
 
+	const shared = Object.entries(packageJson.dependencies)
+		.map(([name, version]): [string, SharedConfig] => [
+			name,
+			{
+				version,
+				requiredVersion: version
+			}
+		])
+		.reduce<Record<string, SharedConfig>>((acc, [name, config]) => {
+			acc[name] = config;
+			return acc;
+		}, {});
+
 	return federation({
 		name: packageJson.name,
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared: ['react']
+		shared
 	});
 };
 
