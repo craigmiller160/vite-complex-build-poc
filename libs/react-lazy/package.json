@@ -7,10 +7,13 @@
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/config.js",
-      "require": "./build/config.umd.cjs"
+      "import": "./build/react-lazy.js",
+      "require": "./build/react-lazy.umd.cjs"
     }
   },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "vite build"
   },
