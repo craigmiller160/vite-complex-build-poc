@@ -3,8 +3,8 @@ import { useIsMounted } from './useIsMounted';
 
 type Props<T extends object> = Readonly<{
 	path: string;
-	props: T;
-	loading: ReactNode;
+	props?: T;
+	loading?: ReactNode;
 }>;
 
 type State<T extends object> = {
@@ -30,8 +30,17 @@ export const LazyWrapper = <T extends object>(props: Props<T>) => {
 			.catch((ex) => console.error(ex));
 	}, [props.path, isMounted]);
 
+	if (state.Component === undefined && props.loading === undefined) {
+		return <></>;
+	}
+
 	if (state.Component === undefined) {
 		return props.loading;
+	}
+
+	if (props.props === undefined) {
+		const Component = state.Component as ComponentType<object>;
+		return <Component />;
 	}
 
 	return <state.Component {...props.props} />;
