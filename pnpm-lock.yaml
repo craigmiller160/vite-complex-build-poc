@@ -60,6 +60,9 @@ importers:
       config:
         specifier: workspace:*
         version: link:../../libs/config
+      react-lazy:
+        specifier: workspace:*
+        version: link:../../libs/react-lazy
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
