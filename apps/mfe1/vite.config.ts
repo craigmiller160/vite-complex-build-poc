@@ -6,9 +6,6 @@ export default configureViteApplication({
 	federation: {
 		exposes: {
 			'./App': './src/App.tsx'
-		},
-		shared: {
-			...packageJson.dependencies
 		}
 	}
 });

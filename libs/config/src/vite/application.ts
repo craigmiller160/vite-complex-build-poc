@@ -11,13 +11,13 @@ import federation, {
 
 type PackageJson = Readonly<{
 	name: string;
+	dependencies: Record<string,string>;
 }>;
 type NodeEnv = 'development' | 'test' | 'production';
 export type ViteAppConfig = Readonly<{
 	port: number;
 	federation?: Readonly<{
 		exposes?: Exposes;
-		shared?: Shared;
 		remotes?: Remotes;
 	}>;
 }>;
@@ -42,7 +42,7 @@ const configureFederation = (
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared: config.shared
+		shared: ['react']
 	});
 };
 
