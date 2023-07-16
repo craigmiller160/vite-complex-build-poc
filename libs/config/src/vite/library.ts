@@ -1,5 +1,6 @@
 import dts from 'vite-plugin-dts';
 import { defineConfig, UserConfigExport } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import packageJson from '../../package.json';
 
@@ -18,7 +19,8 @@ export const configureVite = (config: ViteLibraryConfig): UserConfigExport =>
 			dts({
 				entryRoot: rootDir,
 				insertTypesEntry: true
-			})
+			}),
+			react()
 		],
 		build: {
 			outDir: buildDir,
