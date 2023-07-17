@@ -55,7 +55,7 @@ const configureFederation = (
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared: ['react', 'react-dom']
+		shared: ['react', 'react-dom', '@mui/material', '@emotion/styled']
 	});
 };
 
