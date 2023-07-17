@@ -5,7 +5,6 @@ export default configureViteApplication({
 	federation: {
 		exposes: {
 			'./App': './src/App.tsx'
-		},
-		excludeFromSharing: ['@emotion/styled']
+		}
 	}
 });

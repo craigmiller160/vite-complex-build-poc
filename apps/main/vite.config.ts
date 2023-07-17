@@ -5,7 +5,6 @@ export default configureViteApplication({
 	federation: {
 		remotes: {
 			mfe1: 'http://localhost:3001/assets/remoteEntry.js'
-		},
-		excludeFromSharing: ['@emotion/styled']
+		}
 	}
 });
