@@ -7,7 +7,7 @@
     "apps:build": "pnpm --parallel --filter './apps/*' run build",
     "libs:build": "pnpm --parallel --filter './libs/*' run build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit",
-    "lint": "eslint --fix --max-warnings=0 '{apps,libs}/*/src/**/*.{ts,tsx,js,tsx}'"
+    "lint": "eslint --fix --max-warnings=0 '{apps,libs}/*/src/**/*.{ts,tsx,js,tsx}' && eslint --fix --max-warnings=0 '{apps,libs}/*/vite.config.ts'"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": "eslint --fix --max-warnings=0"

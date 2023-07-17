@@ -3,15 +3,11 @@ import path from 'path';
 import fs from 'fs';
 import react from '@vitejs/plugin-react-swc';
 import topLevelAwait from 'vite-plugin-top-level-await';
-import federation, {
-	Exposes,
-	Shared,
-	Remotes
-} from '@originjs/vite-plugin-federation';
+import federation, { Exposes, Remotes } from '@originjs/vite-plugin-federation';
 
 type PackageJson = Readonly<{
 	name: string;
-	dependencies: Record<string,string>;
+	dependencies: Record<string, string>;
 }>;
 type NodeEnv = 'development' | 'test' | 'production';
 export type ViteAppConfig = Readonly<{
