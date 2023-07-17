@@ -5,6 +5,7 @@
     "prepare": "husky install",
     "apps:start": "pnpm --parallel --filter './apps/*' start",
     "apps:build": "pnpm --parallel --filter './apps/*' build",
+    "apps:serve": "pnpm --parallel --filter './apps/*' serve",
     "libs:build": "pnpm --filter './libs/config' build && pnpm --parallel --filter './libs/*' --filter '!./libs/config' build",
     "typeCheck": "pnpm --parallel exec tsc --noEmit",
     "lint": "eslint --fix --max-warnings=0 '{apps,libs}/*/src/**/*.{ts,tsx,js,tsx}' && eslint --fix --max-warnings=0 '{apps,libs}/*/vite.config.ts'"

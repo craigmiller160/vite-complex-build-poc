@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "mkdir -p build && pnpm run \"/^(preview|buildWatch)$/\"",
+    "serve": "mkdir -p build && pnpm run \"/^(preview|build)/\"",
     "build": "vite build",
     "preview": "vite preview --port 3001",
     "buildWatch": "NODE_ENV=development vite build --watch",
