@@ -15,6 +15,7 @@ export type ViteAppConfig = Readonly<{
 	federation?: Readonly<{
 		exposes?: Exposes;
 		remotes?: Remotes;
+		excludeFromSharing?: ReadonlyArray<string>;
 	}>;
 }>;
 type SharedConfig = Readonly<{
@@ -33,6 +34,8 @@ const configureFederation = (
 		return undefined;
 	}
 
+	const excludeFromSharing = config.excludeFromSharing ?? [];
+
 	const packageJson: PackageJson = JSON.parse(
 		fs.readFileSync(packageJsonFile, 'utf8')
 	);
@@ -45,6 +48,7 @@ const configureFederation = (
 				requiredVersion: version
 			}
 		])
+		.filter(([name]) => !excludeFromSharing.includes(name))
 		.reduce<Record<string, SharedConfig>>((acc, [name, config]) => {
 			acc[name] = config;
 			return acc;
@@ -55,7 +59,7 @@ const configureFederation = (
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared: ['react', 'react-dom', '@mui/material', '@emotion/styled']
+		shared
 	});
 };
 
