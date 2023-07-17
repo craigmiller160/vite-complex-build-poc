@@ -32,7 +32,8 @@ export const configureVite = (config: ViteLibraryConfig): UserConfigExport => {
 			rollupOptions: {
 				external: [
 					...Object.keys(packageJson.dependencies ?? {}),
-					...Object.keys(packageJson.devDependencies ?? {})
+					...Object.keys(packageJson.devDependencies ?? {}),
+					'react/jsx-runtime'
 				]
 			}
 		}
