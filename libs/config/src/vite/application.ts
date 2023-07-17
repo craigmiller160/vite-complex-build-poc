@@ -17,6 +17,10 @@ export type ViteAppConfig = Readonly<{
 		remotes?: Remotes;
 	}>;
 }>;
+type SharedConfig = Readonly<{
+	version: string;
+	requiredVersion: string;
+}>;
 
 const srcDir = path.join(process.cwd(), 'src');
 const buildDir = path.join(process.cwd(), 'build');
@@ -33,12 +37,25 @@ const configureFederation = (
 		fs.readFileSync(packageJsonFile, 'utf8')
 	);
 
+	const shared = Object.entries(packageJson.dependencies)
+		.map(([name, version]): [string, SharedConfig] => [
+			name,
+			{
+				version,
+				requiredVersion: version
+			}
+		])
+		.reduce<Record<string, SharedConfig>>((acc, [name, config]) => {
+			acc[name] = config;
+			return acc;
+		}, {});
+
 	return federation({
 		name: packageJson.name,
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared: ['react']
+		shared
 	});
 };
 
