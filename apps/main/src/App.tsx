@@ -1,6 +1,5 @@
 import { Other } from './jsAndTs/Other';
 import { Pretty } from './mui/Pretty';
-import { App as Mfe1App } from 'mfe1/App';
 import { Button, CircularProgress } from '@mui/material';
 import { LazyWrapper } from 'react-lazy';
 import { useState } from 'react';
@@ -18,7 +17,11 @@ export const App = () => {
 				Toggle MFE1
 			</Button>
 			{showMfe1 && (
-				<LazyWrapper path="mfe1/App" loading={<CircularProgress />} />
+				<LazyWrapper
+					path="mfe1/App"
+					name="App"
+					loading={<CircularProgress />}
+				/>
 			)}
 		</div>
 	);
