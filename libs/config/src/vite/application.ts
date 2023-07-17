@@ -21,6 +21,7 @@ export type ViteAppConfig = Readonly<{
 type SharedConfig = Readonly<{
 	version: string;
 	requiredVersion: string;
+	singleton: boolean;
 }>;
 
 const srcDir = path.join(process.cwd(), 'src');
@@ -45,7 +46,8 @@ const configureFederation = (
 			name,
 			{
 				version,
-				requiredVersion: version
+				requiredVersion: version,
+				singleton: true // TODO don't know if this is doing anything
 			}
 		])
 		.filter(([name]) => !excludeFromSharing.includes(name))
