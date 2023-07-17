@@ -1,14 +1,10 @@
-import { defineConfig, UserConfigExport, Plugin } from 'vite';
+import { defineConfig, Plugin, UserConfigExport } from 'vite';
 import path from 'path';
-import fs from 'fs';
 import react from '@vitejs/plugin-react-swc';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import federation, { Exposes, Remotes } from '@originjs/vite-plugin-federation';
+import { getPackageJson } from './PackageJson';
 
-type PackageJson = Readonly<{
-	name: string;
-	dependencies: Record<string, string>;
-}>;
 type NodeEnv = 'development' | 'test' | 'production';
 export type ViteAppConfig = Readonly<{
 	port: number;
@@ -26,7 +22,6 @@ type SharedConfig = Readonly<{
 
 const srcDir = path.join(process.cwd(), 'src');
 const buildDir = path.join(process.cwd(), 'build');
-const packageJsonFile = path.join(process.cwd(), 'package.json');
 
 const configureFederation = (
 	config?: ViteAppConfig['federation']
@@ -37,11 +32,9 @@ const configureFederation = (
 
 	const excludeFromSharing = config.excludeFromSharing ?? [];
 
-	const packageJson: PackageJson = JSON.parse(
-		fs.readFileSync(packageJsonFile, 'utf8')
-	);
+	const packageJson = getPackageJson();
 
-	const shared = Object.entries(packageJson.dependencies)
+	const shared = Object.entries(packageJson.dependencies ?? {})
 		.map(([name, version]): [string, SharedConfig] => [
 			name,
 			{
