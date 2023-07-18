@@ -19,11 +19,7 @@ export const App = () => {
 			<Button variant="contained" onClick={toggleShowMfe1}>
 				Toggle MFE1
 			</Button>
-			{
-				showMfe1 &&
-				<Mfe1App />
-			}
-
+			{showMfe1 && <Mfe1App />}
 		</div>
 	);
 };
