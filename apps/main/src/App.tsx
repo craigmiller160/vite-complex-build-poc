@@ -1,6 +1,5 @@
 import { Other } from './jsAndTs/Other';
 import { Pretty } from './mui/Pretty';
-import { App as Mfe1App } from 'mfe1/App';
 import { Suspense, useState } from 'react';
 import { Button } from '@mui/material';
 import { namedLazy } from 'react-lazy';
@@ -20,7 +19,6 @@ export const App = () => {
 			</Button>
 			{showMfe1 && (
 				<div>
-					<Mfe1App />
 					<Suspense fallback="Loading...">
 						<LazyMfe1 />
 					</Suspense>
