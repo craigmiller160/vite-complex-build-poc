@@ -4,11 +4,8 @@ import fs from 'fs';
 import react from '@vitejs/plugin-react-swc';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import federation, { Exposes, Remotes } from '@originjs/vite-plugin-federation';
+import { PackageJson } from './PackageJson';
 
-type PackageJson = Readonly<{
-	name: string;
-	dependencies: Record<string, string>;
-}>;
 type NodeEnv = 'development' | 'test' | 'production';
 export type ViteAppConfig = Readonly<{
 	port: number;
@@ -40,7 +37,7 @@ const configureFederation = (
 		fs.readFileSync(packageJsonFile, 'utf8')
 	);
 
-	const shared = Object.entries(packageJson.dependencies)
+	const shared = Object.entries(packageJson.dependencies ?? {})
 		.map(([name, version]): [string, SharedConfig] => [
 			name,
 			{
