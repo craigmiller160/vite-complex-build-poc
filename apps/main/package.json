@@ -13,6 +13,7 @@
   "devDependencies": {
     "@module-federation/vite": "^0.2.6",
     "@originjs/vite-plugin-federation": "^1.2.3",
+    "@softarc/native-federation": "^1.1.1",
     "@softarc/native-federation-esbuild": "^1.1.1",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.14",

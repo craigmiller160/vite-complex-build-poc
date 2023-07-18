@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { federation } from '@module-federation/vite';
 import { createEsBuildAdapter } from '@softarc/native-federation-esbuild';
+import { reactReplacements } from '@softarc/native-federation-esbuild/src/lib/react-replacements';
 
 export default defineConfig(async ({ command }) => ({
 	plugins: [
@@ -15,7 +16,8 @@ export default defineConfig(async ({ command }) => ({
 				dev: command === 'serve'
 			},
 			adapter: createEsBuildAdapter({
-				plugins: []
+				plugins: [],
+				fileReplacements: reactReplacements
 			})
 		}),
 		react()

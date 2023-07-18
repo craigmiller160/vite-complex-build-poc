@@ -57,6 +57,9 @@ importers:
       '@originjs/vite-plugin-federation':
         specifier: ^1.2.3
         version: 1.2.3
+      '@softarc/native-federation':
+        specifier: ^1.1.1
+        version: 1.1.1
       '@softarc/native-federation-esbuild':
         specifier: ^1.1.1
         version: 1.1.1(@softarc/native-federation-runtime@1.1.1)(@softarc/native-federation@1.1.1)
