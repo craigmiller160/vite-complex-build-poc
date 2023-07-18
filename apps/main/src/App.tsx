@@ -1,8 +1,14 @@
+import React, { Suspense } from 'react';
 import { Other } from './jsAndTs/Other';
 import { Pretty } from './mui/Pretty';
 import { Button, CircularProgress } from '@mui/material';
 import { LazyWrapper } from 'react-lazy';
 import { useState } from 'react';
+
+const MfeApp = React.lazy(() => import('mfe1/App').then((res) => {
+	console.log('RES', res);
+	return res.default.App;
+}));
 
 export const App = () => {
 	const [showMfe1, setShowMfe1] = useState<boolean>(false);
@@ -23,6 +29,9 @@ export const App = () => {
 					loading={<CircularProgress />}
 				/>
 			)}
+			<Suspense fallback="Loading...">
+				<MfeApp />
+			</Suspense>
 		</div>
 	);
 };
