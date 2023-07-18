@@ -54,7 +54,10 @@ const configureFederation = (
 		filename: 'remoteEntry.js',
 		exposes: config.exposes,
 		remotes: config.remotes,
-		shared
+		shared: {
+			...shared
+			// 'react/jsx-runtime': {}
+		}
 	});
 };
 
